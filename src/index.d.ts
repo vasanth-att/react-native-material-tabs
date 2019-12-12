@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleProp, TextStyle, ScrollViewProps } from 'react-native';
+import { StyleProp, TextStyle, ScrollViewProps, BackgroundPropType } from 'react-native';
 
 interface TabsProps extends Pick<ScrollViewProps, 'keyboardShouldPersistTaps'> {
   /**
@@ -79,6 +79,11 @@ interface TabsProps extends Pick<ScrollViewProps, 'keyboardShouldPersistTaps'> {
    * Optional text style fot selected tab
    */
   activeTextStyle?: StyleProp<TextStyle>;
+
+  /**
+   * Optional background prop for customizing focus style (Android only)
+   */
+  background?: BackgroundPropType;
 
   /**
    * Handler that's emitted every time the user presses a tab.

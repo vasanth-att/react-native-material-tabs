@@ -7,6 +7,7 @@ import {
   StyleProp,
   TextStyle,
   I18nManager,
+  BackgroundPropType,
 } from 'react-native';
 
 import Tab from './Tab';
@@ -29,6 +30,7 @@ interface Props extends Pick<ScrollViewProps, 'keyboardShouldPersistTaps'> {
   activeTextStyle: StyleProp<TextStyle>;
   items: ContentType[];
   uppercase: boolean;
+  background?: BackgroundPropType?;
   onChange(index: number): void;
 }
 
@@ -50,6 +52,7 @@ const MaterialTabs: React.FC<Props> = ({
   uppercase,
   indicatorColor,
   barColor,
+  background,
 }) => {
   const [tabWidth, setTabWidth] = useState(0);
   const [barWidth, setBarWidth] = useState(0);
@@ -158,6 +161,7 @@ const MaterialTabs: React.FC<Props> = ({
                 tabWidth={!scrollable ? tabWidth : barWidth * 0.4}
                 uppercase={uppercase}
                 inActiveTextColor={inactiveTextColor}
+                background={background}
               />
             ))}
           </TabTrack>
