@@ -30,7 +30,7 @@ interface Props extends Pick<ScrollViewProps, 'keyboardShouldPersistTaps'> {
   activeTextStyle: StyleProp<TextStyle>;
   items: ContentType[];
   uppercase: boolean;
-  background?: BackgroundPropType?;
+  background?: BackgroundPropType;
   onChange(index: number): void;
 }
 
