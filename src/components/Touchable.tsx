@@ -6,11 +6,13 @@ import {
   TouchableNativeFeedback,
   StyleProp,
   ViewStyle,
+  BackgroundPropType
 } from 'react-native';
 
 interface TouchableProps {
   style?: StyleProp<ViewStyle>;
   children: React.ReactChild;
+  background?: BackgroundPropType;
   onPress: () => void;
 }
 
@@ -20,7 +22,7 @@ const Touchable = (props: TouchableProps) =>
       {props.children}
     </TouchableOpacity>
   ) : (
-    <TouchableNativeFeedback onPress={props.onPress}>
+    <TouchableNativeFeedback onPress={props.onPress} background={props.background}>
       <View style={props.style}>{props.children}</View>
     </TouchableNativeFeedback>
   );

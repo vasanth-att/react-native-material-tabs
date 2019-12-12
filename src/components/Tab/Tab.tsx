@@ -1,5 +1,10 @@
 import React from 'react';
-import { StyleSheet, StyleProp, TextStyle } from 'react-native';
+import {
+  StyleSheet,
+  StyleProp,
+  TextStyle,
+  BackgroundPropType,
+} from 'react-native';
 import { TabText, TabBody, TabButton } from './styles';
 
 export type ContentType = string | React.ReactElement;
@@ -16,6 +21,7 @@ interface TabProps {
   uppercase: boolean;
   activeTextStyle?: StyleProp<TextStyle>;
   onPress(): void;
+  background?: BackgroundPropType?;
 }
 
 const Tab = ({
@@ -30,11 +36,12 @@ const Tab = ({
   textStyle,
   uppercase,
   activeTextStyle,
+  background,
 }: TabProps) => {
   const color = active ? activeTextColor : inActiveTextColor;
 
   return (
-    <TabButton onPress={onPress} tabWidth={tabWidth}>
+    <TabButton onPress={onPress} tabWidth={tabWidth} background={background}>
       <TabBody tabHeight={tabHeight}>
         {typeof content === 'string' ? (
           <TabText
