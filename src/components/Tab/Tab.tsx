@@ -21,7 +21,7 @@ interface TabProps {
   uppercase: boolean;
   activeTextStyle?: StyleProp<TextStyle>;
   onPress(): void;
-  background?: BackgroundPropType?;
+  background?: BackgroundPropType;
 }
 
 const Tab = ({
